@@ -1,0 +1,15 @@
+= stylesheet "coderay"
+
+%h1= link_to post.title, post
+%p
+  = link_to "Write a new post", new_post_path, :class => "button"
+  = link_to "Edit this one", [:edit, post], :class => "button"
+  = link_to "Delete this one", post, :method => :delete, :confirm => "Are you sure?", :class => "button red"
+
+~ raw textilize_and_highlight post.body
+
+%p
+  = image_tag "signature_1.png"
+  %br
+  %strong
+    \- Martin Doktár

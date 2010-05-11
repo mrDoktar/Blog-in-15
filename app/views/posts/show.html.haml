@@ -1,10 +1,3 @@
-= stylesheet "coderay"
+= render @post
 
-%h1= @post.title
-%span= @post.published_on
-%p 
-  ~ raw textilize_and_highlight @post.body
-  
-%p
-  = link_to "Edit", [:edit, @post]
-  = link_to "See all posts", posts_path
+= render "posts_list", :posts => @posts

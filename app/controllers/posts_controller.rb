@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find_by_id(params[:id])
+    @posts = Post.latest - [@post]
   end
   
   def edit

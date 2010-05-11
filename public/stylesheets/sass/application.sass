@@ -16,12 +16,20 @@
 
 body
   font-size: 0.75%
+  
+a
+  color: #2E5D89
+  border-bottom: 1px dotted #498FD3
+  text-decoration: none
+  
+  &:hover
+    border-bottom-style: solid
 
 html > body
   font: 14px / 1.5 Helvetica, Arial, sans-serif
   line-height: 1.5em
   padding: 1.5em
-//  background: url('/images/baseline.jpg')
+  //background: url('/images/baseline.jpg')
 
 h1
   font-family: "League Gothic"
@@ -31,6 +39,13 @@ h1
   margin-bottom: 0.6em
   font-weight: normal
   color: #303030
+  a 
+    color: #303030
+    text-decoration: none
+    border: 0
+    
+    &:hover
+      text-decoration: underline
 
 h2
   font-family: "League Gothic"
@@ -51,14 +66,27 @@ h5
   font-size: 0.9em
   font-weight: normal
 
+hr
+  border: 0
+  border-bottom: .07142857142857142857em solid #000
+  margin: 0
+  height: 0
+  margin-bottom: 1.42857142857142857143em
+
 p
   font-size: 1em
   line-height: 1.5em
   margin-bottom: 1.5em
 
+strong
+  font-weight: bold
+
 .hidden
   display: none
 
+.inline 
+  display: inline
+  
 .lefty
   float: left
   margin-right: .35714285714285714285em

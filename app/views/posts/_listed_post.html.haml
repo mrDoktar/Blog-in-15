@@ -1,0 +1,12 @@
+%li.post.blog{:"data-id" => listed_post.id}
+  .info
+    .date
+      .day= listed_post.published_on.strftime("%d")
+      .month=  listed_post.published_on.strftime("%b")
+      .year=  listed_post.published_on.strftime("%y")
+    .title
+      %h1= link_to listed_post.title, listed_post
+      %span.link= post_url listed_post
+      .fadeout
+  .text
+    %p= truncate(strip_tags(listed_post.body), :length => 120)
