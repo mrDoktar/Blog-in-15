@@ -25,4 +25,8 @@ module PostsHelper
     CodeRay.scan(text, lang).send(type, :css => :class).html_safe + " "
   end
   
+  
+  def tag_sentence(post)
+    post.tags.collect{ |t| link_to t.name }.to_sentence.html_safe
+  end
 end

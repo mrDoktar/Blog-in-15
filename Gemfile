@@ -7,6 +7,8 @@ gem 'haml', '>= 3.0.0'
 gem 'RedCloth'
 gem 'coderay'
 
+gem 'acts-as-taggable-on'
+
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :test do

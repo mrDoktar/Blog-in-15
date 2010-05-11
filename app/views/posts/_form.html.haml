@@ -3,6 +3,10 @@
   %br
   = f.text_field :title
   %br
+  = f.label :tag_list
+  %br
+  = f.text_field :tag_list
+  %br
   = f.label :body
   %br
   = f.text_area :body
@@ -11,4 +15,4 @@
   %br
   = f.date_select :published_on
   %br
-  = f.submit "Save"
+  = f.submit "Save", :class => "button"

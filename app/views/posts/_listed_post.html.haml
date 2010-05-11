@@ -5,8 +5,12 @@
       .month=  listed_post.published_on.strftime("%b")
       .year=  listed_post.published_on.strftime("%y")
     .title
-      %h1= link_to listed_post.title, listed_post
-      %span.link= post_url listed_post
+      %h1= link_to listed_post.title, listed_post, :title => listed_post.title
+      %span.info
+        by
+        %span.focus Martin
+        and tagged with
+        = tag_sentence(listed_post)
       .fadeout
   .text
-    %p= truncate(strip_tags(listed_post.body), :length => 120)
+    %p= truncate(strip_tags(textilize(listed_post.body)), :length => 150)
