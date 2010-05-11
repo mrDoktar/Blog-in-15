@@ -1,0 +1,138 @@
+#post {
+  margin-top: 30px;
+  width: 670px;
+  padding: 20px 15px;
+  background: transparent url('/images/post_background.png') no-repeat top center;
+}
+
+.signature {
+  height: 7.14285714285714285714em;
+  margin-bottom: .35714285714285714286em;
+}
+
+.focus {
+  color: #424242; }
+
+#title {
+  height: 6em;
+  margin-bottom: 1.5em; 
+  }
+  #title .info {
+    margin-bottom: 0px;
+    color: #A6A4A4;
+    font-style: italic;
+    }
+  #title .info .date {
+    font-style: normal;
+  }
+
+  #title .profile_image {
+    float: left;
+    margin-top: -0.357em;
+    margin-right: 0.8em;
+    -moz-border-radius: 2px;
+    border: 1px solid black;
+    -moz-box-shadow: 0px 2px 3px #5d5d5d; 
+    width: 5em; }
+  
+#admin_buttons {
+  position: absolute;
+  top: 1.5em; 
+  right: 1.5em;
+}
+#post_type_selector {
+  height: 2.929em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px; }
+
+#posts {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 1.5em; }
+
+.post {
+  border-top: 0.071em solid #dddddd;
+  height: 7.429em;
+  position: relative;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both; }
+  .post:last-child {
+    border-bottom: 0.071em solid #dddddd;
+    height: 7.429em; }
+  .post.important {
+    background-color: #d1f2ff; }
+  .post .info {
+    width: 65%;
+    overflow: hidden;
+    float: left;
+    position: relative; 
+    font-style: italic; }
+    .post .info a {
+      color: #303030;
+      text-decoration: none; }
+      .post .info a:hover {
+        text-decoration: underline; }
+    .post .info .date {
+      font-family: "Sorts MG";
+      height: 4.429em;
+      padding: 1.5em 0em;
+      padding-left: 0;
+      width: 99px;
+      margin-right: 2em;
+      float: left;
+      text-align: center; 
+      background: transparent url('/images/date_badge.png') no-repeat center center;
+      }
+      .post .info .date .year, .post .info .date .month {
+        text-align: center; }
+      .post .info .date .day {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold; }
+      .post .info .date .year {
+        font-size: 2em;
+        font-weight: bold; }
+      .post .info .date .day {
+        color: #303030; }
+      .post .info .date .month {
+        color: #303030;
+        font-size: 1.571em; }
+      .post .info .date .year {
+        color: #b7b5b5; }
+    .post .info .title {
+      padding: 1.5em 0;
+      height: 4.429em;
+      white-space: nowrap; }
+      .post .info .title h1 {
+        white-space: nowrap; }
+      .post .info .title .info a {
+        text-decoration: none; 
+        color: #2e5d89;
+        border-bottom-color: #498fd3;}        
+      .post .info .title .info {
+        white-space: nowrap;
+        color: #b7b5b5; }
+      .post .info .title .fadeout {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 200px;
+        width: 20px;
+        background: transparent url("/images/fadeout.png") repeat-y; }
+  .post .text {
+    width: 35%;
+    overflow: hidden;
+    height: 6em;
+    float: left; }
+    .post .text p {
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+      max-width: 32.857em;
+      padding: 1.5em;
+      margin-left: auto;
+      margin-right: 0;
+      color: #999999; }

@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Sorts MG Italic";
+  src: url("/fonts/OFLGoudyStM-Italic.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Sorts MG";
+  src: url("/fonts/OFLGoudyStM.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Prociono";
+  src: url("/fonts/Prociono-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: "League Gothic";
+  src: url("/fonts/League-Gothic.otf") format("opentype"); }
+
+body {
+  font-size: 0.75%; }
+
+html > body {
+  font: 14px/1.5 Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  padding-top: 1px;
+  /*background: url('/images/baseline.jpg');*/
+  background: #FFF url('/images/body_background.png') repeat-x top;
+  }
+
+a {
+  color: #2e5d89;
+  border-bottom: 1px dotted #498fd3;
+  text-decoration: none; }
+  a:hover {
+    border-bottom-style: solid; }
+
+h1 {
+  font-family: "League Gothic";
+  letter-spacing: 0.05em;
+  font-size: 2.5em;
+  line-height: 0.6em;
+  margin-bottom: 0.6em;
+  font-weight: normal;
+  color: #303030; }
+  h1 a {
+    color: #303030;
+    text-decoration: none;
+    border: 0; }
+    h1 a:hover {
+      text-decoration: underline; }
+
+h2 {
+  font-family: "League Gothic";
+  letter-spacing: 0.05em;
+  font-size: 1.714em;
+  line-height: 0.875em;
+  margin-bottom: 0.875em;
+  font-weight: normal;
+  color: #303030; }
+
+h5 {
+  position: absolute;
+  top: -1.3em;
+  z-index: 9999;
+  padding: 0pt 0.2em;
+  margin-left: 1em;
+  color: #999999;
+  font-size: 0.9em;
+  font-weight: normal; }
+
+hr {
+  border: 0;
+  border-bottom: 0.071em solid black;
+  margin: 0;
+  height: 0;
+  margin-bottom: 1.429em; }
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1.5em; }
+
+strong {
+  font-weight: bold; }
+
+.hidden {
+  display: none; }
+
+.inline {
+  display: inline; }
+
+.lefty {
+  float: left; }
+  
+#container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
