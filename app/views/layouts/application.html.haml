@@ -1,0 +1,12 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Blog in 15
+    = stylesheet_link_tag :all
+    = yield :stylesheet
+    = javascript_include_tag "jquery", "rails", "application"
+    = yield :javascript
+    = csrf_meta_tag
+  %body
+    = yield
