@@ -1,0 +1,8 @@
+%h1= @post.title
+%span= @post.published_on
+%p 
+  ~ @post.body
+  
+%p
+  = link_to "Edit", [:edit, @post]
+  = link_to "See all posts", posts_path

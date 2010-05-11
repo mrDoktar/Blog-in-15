@@ -1,0 +1,92 @@
+#post_type_selector
+  height: 2.92857142857142857142em
+  margin-left: auto
+  margin-right: auto
+  max-width: 1600px
+
+#posts
+  list-style: none
+  margin: 0
+  margin-bottom: 1.5em
+
+.post
+  border-top: 0.071428571428571em solid #DDD
+  height: 7.428571428571429em
+  position: relative
+  max-width: 1600px
+  margin-left: auto
+  margin-right: auto
+  clear: both
+  &:last-child
+    border-bottom: 0.071428571428571em solid #DDD
+    height: 7.428571428571429em
+  &.important
+    background-color: #D1F2FF
+  .info
+    width: 65%
+    overflow: hidden
+    float: left
+    position: relative
+    a
+      color: #303030
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    .date
+      font-family: "Sorts MG"
+      height: 4.428571428571429em
+      border-right: .07142857142857142857em dotted #DDD
+      padding: 1.5em 2em
+      width: 2.5em
+      margin-right: 2em
+      float: left
+      text-align: center
+      .year, .month
+        text-align: center
+      .day
+        text-align: center
+        font-size: 2em
+        font-weight: bold
+      .year
+        font-size: 2em
+        font-weight: bold
+      .day
+        color: #303030
+      .month
+        color: #303030
+        font-size: 1.571428571428571em
+      .year
+        color: #B7B5B5
+    .title
+      padding: 1.5em 0
+      height: 4.428571428571429em
+      white-space: nowrap
+      h1
+        white-space: nowrap
+      .link
+        white-space: nowrap
+        color: #B7B5B5
+        .focus
+          color: #919191
+          font-weight: bold
+      .fadeout
+        position: absolute
+        top: 0px
+        right: 0px
+        height: 200px
+        width: 20px
+        background: transparent url("/images/fadeout.png") repeat-y
+  .text
+    width: 35%
+    overflow: hidden
+    height: 6em
+    float: left
+    p
+      font-size: 1em
+      line-height: 1.5em
+      margin-bottom: 1.5em
+      max-width: 32.85714285714285714285em
+      padding: 1.5em
+      margin-left: auto
+      margin-right: 0
+      color: #999

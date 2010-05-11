@@ -1,0 +1,22 @@
+= stylesheet "posts", "buttons"
+= javascript "posts"
+#post_type_selector
+  %button#all.button.active Everyting
+  %button#blogs.button Only blogs
+
+%ul#posts
+  - @posts.each do |post|
+    %li.post.blog{:"data-id" => post.id}
+      .info
+        .date
+          .day= post.published_on.strftime("%d")
+          .month=  post.published_on.strftime("%b")
+          .year=  post.published_on.strftime("%y")
+        .title
+          %h1= link_to post.title, post
+          %span.link= post_url post
+          .fadeout
+      .text
+        %p= truncate(strip_tags(post.body), :length => 120)
+%p
+  = link_to "Write a new post", new_post_path, :class => "button blue"
