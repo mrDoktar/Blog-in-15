@@ -1,7 +1,9 @@
+= stylesheet "coderay"
+
 %h1= @post.title
 %span= @post.published_on
 %p 
-  ~ @post.body
+  ~ raw textilize_and_highlight @post.body
   
 %p
   = link_to "Edit", [:edit, @post]
