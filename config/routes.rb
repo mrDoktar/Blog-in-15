@@ -1,6 +1,10 @@
 BlogIn15::Application.routes.draw do |map|
-  resources :posts
-
+  resources :posts, :only => [:index, :show]
+  
+  namespace :admin do
+    resources :posts, :only => [:new, :create, :edit, :update, :destroy]
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

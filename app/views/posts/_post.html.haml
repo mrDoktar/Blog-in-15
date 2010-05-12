@@ -2,11 +2,11 @@
 
 - content_for(:menu) do
   %p
-    = link_to "Write a new post", new_post_path, :class => "button in_menu"
+    = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
     %br
-    = link_to "Edit this one", [:edit, post], :class => "button in_menu"
+    = link_to "Edit this one", [:edit, :admin, post], :class => "button in_menu"
     %br
-    = link_to "Delete this one", post, :method => :delete, :confirm => "Are you sure?", :class => "button red in_menu"
+    = link_to "Delete this one", [:admin, post], :method => :delete, :confirm => "Are you sure?", :class => "button red in_menu"
 
 #title
   = image_tag "http://www.gravatar.com/avatar/eb8c26db448303abe1d2f5df15c2a0a5?s=70", :class => "profile_image"
