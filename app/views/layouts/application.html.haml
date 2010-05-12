@@ -9,5 +9,13 @@
     = yield :javascript
     = csrf_meta_tag
   %body
+    #top_menu
+    #header_container
+      #header
+        = image_tag "fade.png", :id => "fade"
+        = image_tag "logo.png", :id => "logo"
     #container
-      = yield
+      #menu= yield :menu
+      #content= yield
+      #bottom= yield :bottom
+      

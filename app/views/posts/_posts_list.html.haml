@@ -1,15 +1,16 @@
-= stylesheet "posts", "buttons"
-= javascript "posts"
+- stylesheet "posts"
+- unless @posts.empty?
+  - javascript "posts"
+  
+  %hr.clear
 
-%hr
+  %h1 Other posts
 
-%h1 Other posts
+  #post_type_selector
+    %button#all.button.active Show all
+    %button#martin.button By Martin
+    %button#mikael.button By Mikael
+    %button#patrik.button By Patrik
 
-#post_type_selector
-  %button#all.button.active Show all
-  %button#martin.button By Martin
-  %button#mikael.button By Mikael
-  %button#patrik.button By Patrik
-
-%ul#posts
-  = render :partial => "listed_post", :collection => @posts
+  %ul#posts
+    = render :partial => "listed_post", :collection => @posts

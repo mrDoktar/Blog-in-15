@@ -1,9 +1,12 @@
 = stylesheet "coderay"
 
-%p#admin_buttons
-  = link_to "Write a new post", new_post_path, :class => "button"
-  = link_to "Edit this one", [:edit, post], :class => "button"
-  = link_to "Delete this one", post, :method => :delete, :confirm => "Are you sure?", :class => "button red"
+- content_for(:menu) do
+  %p
+    = link_to "Write a new post", new_post_path, :class => "button in_menu"
+    %br
+    = link_to "Edit this one", [:edit, post], :class => "button in_menu"
+    %br
+    = link_to "Delete this one", post, :method => :delete, :confirm => "Are you sure?", :class => "button red in_menu"
 
 #title
   = image_tag "http://www.gravatar.com/avatar/eb8c26db448303abe1d2f5df15c2a0a5?s=70", :class => "profile_image"
@@ -13,13 +16,14 @@
     %span.focus= "#{post.published_on.strftime("%b")} #{post.published_on.day.ordinalize}, #{post.published_on.year}"
     by
     %span.focus Martin Doktár
-    and tagged with 
-    = tag_sentence(post)
+    - unless post.tags.empty?
+      and tagged with 
+      = tag_sentence(post)
 
 ~ raw textilize_and_highlight post.body
 
 %p
-  = image_tag "signature_1.png", :class => "signature"
+  = image_tag "signature_2.png", :class => "signature"
   %br
   %strong
     \- Martin Doktár

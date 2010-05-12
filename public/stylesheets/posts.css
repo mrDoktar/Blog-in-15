@@ -1,8 +1,5 @@
 #post {
-  margin-top: 30px;
-  width: 670px;
-  padding: 20px 15px;
-  background: transparent url('/images/post_background.png') no-repeat top center;
+  width: 710px;
 }
 
 .signature {
@@ -28,12 +25,15 @@
 
   #title .profile_image {
     float: left;
-    margin-top: -0.357em;
+    margin-top: -0.7em;
+    margin-left: -0.4em;
     margin-right: 0.8em;
-    -moz-border-radius: 2px;
-    border: 1px solid black;
-    -moz-box-shadow: 0px 2px 3px #5d5d5d; 
-    width: 5em; }
+    margin-bottom: 1em;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #FFF;
+    -moz-box-shadow: 0px 2px 2px #9A9A9A;
+    -webkit-box-shadow: 0px 2px 2px #9A9A9A; }
   
 #admin_buttons {
   position: absolute;
@@ -93,7 +93,7 @@
         font-size: 2em;
         font-weight: bold; }
       .post .info .date .year {
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: bold; }
       .post .info .date .day {
         color: #303030; }
@@ -108,11 +108,11 @@
       white-space: nowrap; }
       .post .info .title h1 {
         white-space: nowrap; }
-      .post .info .title .info a {
+      .post .info .title .detailed_info a {
         text-decoration: none; 
         color: #2e5d89;
         border-bottom-color: #498fd3;}        
-      .post .info .title .info {
+      .post .info .title .detailed_info {
         white-space: nowrap;
         color: #b7b5b5; }
       .post .info .title .fadeout {

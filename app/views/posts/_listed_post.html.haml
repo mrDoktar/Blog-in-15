@@ -3,14 +3,15 @@
     .date
       .day= listed_post.published_on.strftime("%d")
       .month=  listed_post.published_on.strftime("%b")
-      .year=  listed_post.published_on.strftime("%y")
+      .year=  listed_post.published_on.strftime("%Y")
     .title
       %h1= link_to listed_post.title, listed_post, :title => listed_post.title
-      %span.info
+      %span.detailed_info
         by
         %span.focus Martin
-        and tagged with
-        = tag_sentence(listed_post)
+        - unless listed_post.tags.empty?
+          and tagged with
+          = tag_sentence(listed_post)
       .fadeout
   .text
     %p= truncate(strip_tags(textilize(listed_post.body)), :length => 150)

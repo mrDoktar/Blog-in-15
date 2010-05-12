@@ -1,4 +1,5 @@
 #post
   = render @post
 
-= render "posts_list", :posts => @posts
+- content_for(:bottom) do
+  = render "posts_list", :posts => @posts
