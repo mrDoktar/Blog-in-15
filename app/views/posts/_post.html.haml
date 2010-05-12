@@ -19,6 +19,7 @@
     - unless post.tags.empty?
       and tagged with 
       = tag_sentence(post)
+    = raw "(" + link_to("Comments", post_path(post, :anchor => "disqus_thread")) + ")"
 
 ~ raw textilize_and_highlight post.body
 
@@ -27,3 +28,21 @@
   %br
   %strong
     \- Martin Doktár
+%hr
+
+#disqus_thread
+
+:javascript
+  var disqus_identifier = #{post.id};
+  var disqus_developer = 1; 
+
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://blogin15.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+
+%noscript
+  Please enable JavaScript to view the 
+  = link_to "comments powered by Disqus.", "http://disqus.com/?ref_noscript=blogin15"
+
