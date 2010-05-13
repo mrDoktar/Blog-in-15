@@ -40,8 +40,9 @@
   top: 1.5em; 
   right: 1.5em;
 }
-#post_type_selector {
-  height: 2.929em;
+#post_selector {
+  line-height: 2em;
+  margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
   max-width: 1600px; }
@@ -55,11 +56,16 @@
 #posts #loading_post {
   text-align: center;
   height: 3em;
-  border-top: 0.071em solid #dddddd;
   height: 4.429em;
   padding: 1.5em 0em;
   display: none;
+  position: relative;
+  top: -7.429em;
+  background-color: #FFF;
 }
+  #posts #loading_post.normal_position {
+    top: 0;
+  }
   #loading_post img {
     margin-left: auto;
     margin-right: auto;
@@ -167,7 +173,7 @@
 }
 .jScrollPaneDrag {
 	position: absolute;
-	background: #212121;
+	background: transparent url('/images/scroll_handle_background.png') repeat;
 	cursor: pointer;
 	overflow: hidden;
 	-webkit-border-radius: 5px;

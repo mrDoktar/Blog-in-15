@@ -44,31 +44,6 @@
 
 (function($) {
 
-var allow_load_posts = true;
-var loading_posts    = false;
-function loadPosts() {
-  if(loading_posts || allow_load_posts == false) {
-    loading_posts = false;
-    return;
-  }
-  else {
-    $("#loading_post").show();
-    loading_posts = true;
-  }
-    
-  var currently_loaded_posts = $("li.post").size()
-  $.get("/posts", "list=true&offset=" + currently_loaded_posts, function(data) {
-    $("#loading_post").hide();
-    if(data == " ")
-      allow_load_posts = false;
-    else {
-      $("#loading_post").before(data);
-      $("#posts").jScrollPane({reload: true});
-    }
-    loading_posts = false;
-  }); 
-}
-
 $.jScrollPane = {
 	active : []
 };
@@ -401,8 +376,8 @@ $.fn.jScrollPane = function(settings)
 						$upArrow[destY == 0 ? 'addClass' : 'removeClass']('disabled');
 						$downArrow[destY == maxY ? 'addClass' : 'removeClass']('disabled');
 					}
-					if(p == 1 && p != lastPosition) {
-					  loadPosts();
+					if(p > 0.95 && lastPosition < 0.95) {
+					  settings.callbackOnBottom();
 					}
 					lastPosition = p;
 				};
@@ -686,7 +661,8 @@ $.fn.jScrollPane.defaults = {
 	animateToInternalLinks: false,
 	topCapHeight: 0,
 	bottomCapHeight: 0,
-	observeHash: true
+	observeHash: true, 
+	callbackOnBottom: function() {}
 };
 
 // clean up the scrollTo expandos

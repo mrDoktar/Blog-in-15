@@ -27,6 +27,6 @@ module PostsHelper
   
   
   def tag_sentence(post)
-    post.tags.collect{ |t| link_to t.name }.to_sentence.html_safe
+    post.tags.collect{ |t| link_to t.name, posts_path(:tag => t.name) }.to_sentence.html_safe
   end
 end

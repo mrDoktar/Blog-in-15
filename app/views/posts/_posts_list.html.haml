@@ -7,11 +7,12 @@
 
   %h1 Other posts
 
-  #post_type_selector
-    %button#all.button.active Show all
-    %button#martin.button By Martin
-    %button#mikael.button By Mikael
-    %button#patrik.button By Patrik
+  #post_selector
+    %button#all.selector.button.gray.active Show all
+    - User.admins.each do |u|
+      %button.selector.button{:"data-type" => "user", :"data-id" => u.id}= "By #{u.full_name}"
+    - Tag.all.each do |t|
+      %button.selector.button.blue{:"data-type" => "tag", :"data-id" => t.name}= t.name
 
   %ul#posts
     = render :partial => "listed_post", :collection => @posts
