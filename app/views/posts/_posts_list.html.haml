@@ -1,4 +1,5 @@
 - stylesheet "posts"
+- javascript "mousewheel", "jScrollPane"
 - unless @posts.empty?
   - javascript "posts"
   
@@ -14,3 +15,6 @@
 
   %ul#posts
     = render :partial => "listed_post", :collection => @posts
+    %li#loading_post
+      %h2 Loading more posts...
+      = image_tag "/images/loader.gif"

@@ -13,7 +13,7 @@
     #header_container
       #header
         = image_tag "fade.png", :id => "fade"
-        = image_tag "logo.png", :id => "logo"
+        = link_to image_tag("logo.png", :id => "logo"), root_path
     #container
       #menu= yield :menu
       #content= yield

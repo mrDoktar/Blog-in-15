@@ -1,1 +1,7 @@
-= render "posts_list"
+- content_for(:menu) do
+  %p
+    = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
+  
+
+- content_for(:bottom) do
+  = render "posts_list"

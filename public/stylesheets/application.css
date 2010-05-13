@@ -77,6 +77,20 @@ p {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em; }
+  
+li {
+  list-style: disc;
+}
+
+ul {
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: 1.5em;
+}
+
+textarea {
+  height: 3em;
+}
 
 strong {
   font-weight: bold; }
@@ -134,9 +148,10 @@ strong {
     padding: 23px 20px 20px;
     background: transparent url('/images/post_background.png') no-repeat top center;
     z-index: 200;
-    float: right;
     position: relative;
     width: 710px;
+    min-height: 17px;
+    margin-left: 210px;
   }
   #menu {
     position: relative;
@@ -145,4 +160,13 @@ strong {
     padding: 5px;
     padding-top: 1.5em;
     text-align: center;
+    margin-top: 60px;
   }
+#footer_container {
+  height: 400px;
+}
+
+.fieldWithErrors input,
+.fieldWithErrors textarea { background: #FBE3E4; border: 1px solid #8A1F11!important; }
+
+

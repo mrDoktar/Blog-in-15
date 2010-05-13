@@ -10,14 +10,14 @@
   text-align: center;
   text-decoration: none;
   padding: 0.5em 2em 0.55em;
-  text-shadow: 0 0.071em 0.071em rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
   border-radius: 0.5em;
   font-size: 0.714em;
   padding: 0.2em 1em 0.275em;
   color: #606060;
-  border: solid 0.071em #b7b7b7;
+  border: solid 1px #b7b7b7;
   background: white;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
   background: -moz-linear-gradient(top, white, #ededed);

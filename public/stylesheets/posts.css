@@ -47,11 +47,26 @@
   max-width: 1600px; }
 
 #posts {
-  list-style: none;
   margin: 0;
-  margin-bottom: 1.5em; }
+  margin-bottom: 3em; 
+  height: 48.58em;
+  }
+  
+#posts #loading_post {
+  text-align: center;
+  height: 3em;
+  border-top: 0.071em solid #dddddd;
+  height: 4.429em;
+  padding: 1.5em 0em;
+  display: none;
+}
+  #loading_post img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .post {
+  list-style: none;
   border-top: 0.071em solid #dddddd;
   height: 7.429em;
   position: relative;
@@ -59,9 +74,6 @@
   margin-left: auto;
   margin-right: auto;
   clear: both; }
-  .post:last-child {
-    border-bottom: 0.071em solid #dddddd;
-    height: 7.429em; }
   .post.important {
     background-color: #d1f2ff; }
   .post .info {
@@ -136,3 +148,112 @@
       margin-left: auto;
       margin-right: 0;
       color: #999999; }
+      
+
+.jScrollPaneContainer {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	margin-bottom: 3em;
+}
+
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background: transparent url('/images/scroll_background.png') repeat-y;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	background: #212121;
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+a.jScrollArrowUp {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background-color: #666;*/
+	height: 9px;
+}
+a.jScrollArrowUp:hover {
+	/*background-color: #f60;*/
+}
+
+a.jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background-color: #666;*/
+	height: 9px;
+}
+a.jScrollArrowDown:hover {
+	/*background-color: #f60;*/
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+	/*background-color: #f00;*/
+}    
+
+/** FORM ******************************/
+#post_body,
+#post_title,
+#post_tag_list {
+  font: 14px/1.5em Helvetica,Arial,sans-serif;
+  width: 95%;
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-bottom: 1.5em;
+  line-height: 1.5em;
+  outline: none;
+}
+
+select {
+  font: 14px/1.5em Helvetica,Arial,sans-serif;
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-bottom: 1.5em;
+  line-height: 1.5em;  
+  outline: none;
+}
+
+#post_title {
+  font-family: "League Gothic";
+  letter-spacing: 0.05em;
+  font-size: 2.5em;
+  line-height: 0.6em;
+  margin-bottom: 0.6em;
+  font-weight: normal;
+  color: #303030; }
+}
+  

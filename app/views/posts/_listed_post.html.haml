@@ -8,10 +8,8 @@
       %h1= link_to listed_post.title, listed_post, :title => listed_post.title
       %span.detailed_info
         by
-        %span.focus Martin
-        - unless listed_post.tags.empty?
-          and tagged with
-          = tag_sentence(listed_post)
+        %span.focus= listed_post.user.full_name
+        = raw "(" + link_to("Comments", post_path(listed_post, :anchor => "disqus_thread")) + ")"
       .fadeout
   .text
     %p= truncate(strip_tags(textilize(listed_post.body)), :length => 150)

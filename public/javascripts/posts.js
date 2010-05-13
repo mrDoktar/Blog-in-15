@@ -1,17 +1,17 @@
 $(function() {
-  var $buttons = $("#all, #blogs");
+  var $buttons = $("#all, #martin, #mikael, #patrik");
   $buttons.click(function(){
     $buttons.removeClass("active");
     $(this).addClass("active");
-    switch(this.id) {
-      case "blogs":
-        $("li.blog").slideDown("slow");
-        $("li:not(.blog)").slideUp("slow");
-      break;
-      default:
-        $("li.item").slideDown("slow");
-      break;
+    if(this.id == "all") {
+      $("li.post").slideDown("slow");
+    }
+    else {
+      $("li." + this.id).slideDown("slow");
+      $("li:not(." + this.id + ")").slideUp("slow");
     }
   });
+  
+  $('#posts').jScrollPane();  
 
 });
