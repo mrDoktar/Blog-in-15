@@ -9,26 +9,16 @@
       %br
       = link_to "Delete this one", [:admin, post], :method => :delete, :confirm => "Are you sure?", :class => "button red in_menu"
 
-#title
-  = image_tag "http://www.gravatar.com/avatar/eb8c26db448303abe1d2f5df15c2a0a5?s=70", :class => "profile_image"
-  %h1= link_to post.title, post
-  %p.info
-    Published
-    %span.focus= "#{post.published_on.strftime("%b")} #{post.published_on.day.ordinalize}, #{post.published_on.year}"
-    by
-    %span.focus Martin Doktár
-    - unless post.tags.empty?
-      and tagged with 
-      = tag_sentence(post)
-    = raw "(" + link_to("Comments", post_path(post, :anchor => "disqus_thread")) + ")"
+= render :partial => "post_info", :locals => {:post => post}
 
 ~ raw textilize_and_highlight post.body
 
 %p
-  = image_tag "signature_2.png", :class => "signature"
+  = image_tag "signature_#{post.user.id}.png", :class => "signature"
   %br
   %strong
-    \- Martin Doktár
+    \- 
+    = post.user.full_name
 %hr
 
 #disqus_thread

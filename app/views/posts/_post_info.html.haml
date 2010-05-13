@@ -1,0 +1,12 @@
+#title
+  = image_tag "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(post.user.email)}?s=70", :class => "profile_image"
+  %h1= link_to post.title, post
+  %p.info
+    Published
+    %span.focus= "#{post.published_on.strftime("%b")} #{post.published_on.day.ordinalize}, #{post.published_on.year}"
+    by
+    %span.focus= post.user.full_name
+    - unless post.tags.empty?
+      and tagged with 
+      = tag_sentence(post)
+    = raw "(" + link_to("Comments", post_path(post, :anchor => "disqus_thread")) + ")"

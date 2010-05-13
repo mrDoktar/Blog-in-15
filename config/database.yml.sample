@@ -1,0 +1,20 @@
+development:
+  adapter: mysql
+  database: blogin15
+  username: root
+  password:
+  encoding: utf8
+    
+test:
+  adapter: mysql
+  database: blogin15-test
+  username: root
+  password:
+  encoding: utf8
+
+production:
+  adapter: mysql
+  database: blogin15
+  username: root
+  password:
+  encoding: utf8

@@ -2,14 +2,13 @@
 - javascript "mousewheel", "jScrollPane"
 - unless @posts.empty?
   - javascript "posts"
-  
+  %a{:name => "posts_list"}
   %hr.clear
-
   %h1 Other posts
 
   #post_selector
     %button#all.selector.button.gray.active Show all
-    - User.admins.each do |u|
+    - User.writers.each do |u|
       %button.selector.button{:"data-type" => "user", :"data-id" => u.id}= "By #{u.full_name}"
     - Tag.all.each do |t|
       %button.selector.button.blue{:"data-type" => "tag", :"data-id" => t.name}= t.name

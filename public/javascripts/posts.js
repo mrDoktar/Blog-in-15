@@ -32,6 +32,15 @@ $(function() {
       loading_posts = false;
     }); 
   }
+  
+  checkPostsHeight = function() {
+    if($("li.post").size() < 7) {
+      $("#posts").css("height", "auto");
+      $(".jScrollPaneContainer").height($("#posts").height());
+    }
+    else 
+      $("#posts, .jScrollPaneContainer").css("height", "48.58em");
+  }
 
 
   var $selectors = $(".selector");
@@ -57,18 +66,14 @@ $(function() {
       else {
         $("#loading_post").before(data);
         $("#loading_post").hide().removeClass("normal_position");
-        if($("li.post").size() < 7) {
-          $("#posts").css("height", "auto");
-          $(".jScrollPaneContainer").height($("#posts").height());
-        }
-        else 
-          $("#posts, .jScrollPaneContainer").css("height", "48.58em");
+        checkPostsHeight();
         $("#posts").jScrollPane({reload: true, callbackOnBottom: loadPosts, maintainPosition: false});
       }
     });
   });
   
 
-  $('#posts').jScrollPane({callbackOnBottom: loadPosts});  
+  checkPostsHeight();
+  $('#posts').jScrollPane({callbackOnBottom: loadPosts});
 
 });

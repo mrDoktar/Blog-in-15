@@ -7,11 +7,14 @@ class ApplicationController < ActionController::Base
   
   def current_user
     return nil unless session[:cas_email].present?
+    session[:cas_email] += "@gmail.com" unless(session[:cas_email].include? "@")
     @current_user ||= User.find_or_create_by_email(session[:cas_email])
   end
   
   def require_admin
-    return current_user.present?
+    CASClient::Frameworks::Rails::Filter    
+
+    redirect_to root_url unless current_user.present? && current_user.admin
   end
   
 end

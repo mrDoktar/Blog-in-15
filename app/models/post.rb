@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates_presence_of :title, :body, :user_id
+  validates_presence_of :title, :intro, :body, :user_id, :published_on
   
   belongs_to :user
   
@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   def self.search(params)
     posts = Post.latest.limit(10).includes(:tags, :user)
     posts = posts.offset(params[:offset].to_i) if params[:offset]
-    posts = posts.where(:tags => {:name => params[:tag]}) if params[:tag]
+    posts = posts.tagged_with(params[:tag]) if params[:tag]
     posts = posts.where(:user_id => params[:user]) if params[:user]
     posts
   end

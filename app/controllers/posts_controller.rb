@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @post = Post.latest.first
     @posts = Post.search(params)
     if params[:list]
       render :partial => "listed_post", :collection => @posts.all 

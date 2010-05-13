@@ -1,0 +1,8 @@
+= stylesheet "coderay"
+
+= render :partial => "post_info", :locals => {:post => post}
+
+~ raw textilize_and_highlight post.intro
+
+%p
+  = link_to "Read more...", post

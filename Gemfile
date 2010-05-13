@@ -9,7 +9,7 @@ gem 'coderay'
 
 gem 'acts-as-taggable-on'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'mysql'
 
 gem 'rubycas-client'
 

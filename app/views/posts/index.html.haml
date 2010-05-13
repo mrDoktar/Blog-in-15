@@ -1,7 +1,11 @@
 - content_for(:menu) do
-  %p
-    = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
-  
+  - if current_user && current_user.admin
+    %p
+      = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
+
+- if @post.present?
+  #post
+    = render :partial => "intro", :locals => {:post => @post}
 
 - content_for(:bottom) do
   = render "posts_list"

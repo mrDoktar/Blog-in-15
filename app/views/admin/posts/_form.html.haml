@@ -6,6 +6,8 @@
   = f.text_field :title
   = f.label :tag_list
   = f.text_field :tag_list
+  = f.label :intro
+  = f.text_area :intro
   = f.label :body
   = f.text_area :body
   = f.label :published_on
@@ -14,4 +16,4 @@
   = f.submit "Save", :class => "button medium"
   
 :javascript
-  $('textarea#post_body').elastic();
+  $('textarea').elastic();
