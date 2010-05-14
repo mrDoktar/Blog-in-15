@@ -8,4 +8,4 @@
     = render :partial => "intro", :locals => {:post => @post}
 
 - content_for(:bottom) do
-  = render "posts_list"
+  = render "posts_list", :posts => @posts

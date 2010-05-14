@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-
+  before_filter CASClient::Frameworks::Rails::Filter
   before_filter :require_admin
 
   def new

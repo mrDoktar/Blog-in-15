@@ -33,7 +33,7 @@ $(function() {
     }); 
   }
   
-  checkPostsHeight = function() {
+  checkPostsListHeight = function() {
     if($("li.post").size() < 7) {
       $("#posts").css("height", "auto");
       $(".jScrollPaneContainer").height($("#posts").height());
@@ -66,14 +66,30 @@ $(function() {
       else {
         $("#loading_post").before(data);
         $("#loading_post").hide().removeClass("normal_position");
-        checkPostsHeight();
+        checkPostsListHeight();
         $("#posts").jScrollPane({reload: true, callbackOnBottom: loadPosts, maintainPosition: false});
       }
     });
   });
   
 
-  checkPostsHeight();
+  checkPostsListHeight();
   $('#posts').jScrollPane({callbackOnBottom: loadPosts});
+  
+  var $menu                  = $("#menu");
+  var menu_height            = $menu.height();
+  var menu_original_position = $menu.offset().top
+  var content_height         = $("#content").height();
+  $(window).scroll(function(){
+      var scroll_top      = $(window).scrollTop();
+      var new_menu_top    = scroll_top - menu_original_position
+      var menu_and_offset = menu_height + new_menu_top;
+      
+      if(scroll_top > menu_original_position && menu_and_offset < content_height)
+        $menu.css("top", new_menu_top);
+      else if(scroll_top < menu_original_position)
+        $menu.css("top", 0);
+      
+  });  
 
 });

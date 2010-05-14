@@ -1,7 +1,7 @@
 - stylesheet "posts"
-- javascript "mousewheel", "jScrollPane"
-- unless @posts.empty?
-  - javascript "posts"
+- javascript "mousewheel", "jScrollPane", "posts"
+
+- unless posts.empty?
   %a{:name => "posts_list"}
   %hr.clear
   %h1 Other posts
@@ -14,7 +14,7 @@
       %button.selector.button.blue{:"data-type" => "tag", :"data-id" => t.name}= t.name
 
   %ul#posts
-    = render :partial => "listed_post", :collection => @posts
+    = render :partial => "listed_post", :collection => posts
     %li#loading_post
       %h2 Loading more posts...
       = image_tag "/images/loader.gif"

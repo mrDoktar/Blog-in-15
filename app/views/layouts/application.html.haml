@@ -2,7 +2,9 @@
 !!!
 %html
   %head
-    %title Blog in 15
+    %title 
+      Blog in 15 
+      = yield(:title)
     = stylesheet_link_tag "reset", "application", "buttons"
     = yield :stylesheet
     = javascript_include_tag "jquery", "rails", "application"

@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
   end
   
   def require_admin
-    CASClient::Frameworks::Rails::Filter    
-
     redirect_to root_url unless current_user.present? && current_user.admin
   end
   
