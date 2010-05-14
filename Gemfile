@@ -9,7 +9,7 @@ gem 'coderay'
 
 gem 'acts-as-taggable-on'
 
-gem 'mysql'
+gem 'pg'
 
 gem 'rubycas-client'
 
