@@ -1,7 +1,4 @@
-- content_for(:menu) do
-  - if current_user && current_user.admin
-    %p
-      = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
+= render :partial => "admin/posts/menu"
 
 - if @post.present?
   #post

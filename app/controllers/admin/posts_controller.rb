@@ -2,6 +2,15 @@ class Admin::PostsController < ApplicationController
   before_filter CASClient::Frameworks::Rails::Filter
   before_filter :require_admin
 
+  def index
+    @posts = Post.search(params, true)
+    if params[:list]
+      render @posts.all 
+    else
+      render "index"
+    end    
+  end
+
   def new
     @post = Post.new
   end

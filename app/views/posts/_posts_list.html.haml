@@ -10,7 +10,7 @@
     %button#all.selector.button.gray.active Show all
     - User.writers.each do |u|
       %button.selector.button{:"data-type" => "user", :"data-id" => u.id}= "By #{u.full_name}"
-    - Tag.all.each do |t|
+    - Tag.published.each do |t|
       %button.selector.button.blue{:"data-type" => "tag", :"data-id" => t.name}= t.name
 
   %ul#posts

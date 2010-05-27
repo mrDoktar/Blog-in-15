@@ -72,8 +72,8 @@
     margin-right: auto;
   }
 
+#posts li {   list-style: none; }
 .post {
-  list-style: none;
   border-top: 0.071em solid #dddddd;
   height: 7.429em;
   position: relative;
@@ -87,12 +87,18 @@
     width: 65%;
     overflow: hidden;
     float: left;
-    position: relative; 
-    font-style: italic; }
-    .post .info a {
+    position: relative;  }
+  .post .info.wide {
+    width: 100%;
+  }
+    .post .info .button {
+      display: inline;
+    }
+    .post .info .detailed_info { font-style: italic; }
+    .post .info .detailed_info a {
       color: #303030;
       text-decoration: none; }
-      .post .info a:hover {
+      .post .info .detailed_info a:hover {
         text-decoration: underline; }
     .post .info .date {
       font-family: "Sorts MG";
@@ -127,6 +133,8 @@
       white-space: nowrap; }
       .post .info .title h1 {
         white-space: nowrap; }
+        .post .info .title h1 a.unfinished { color: #72000E; }
+        .post .info .title h1 a.reviewed { color: #10720E; }
       .post .info .title .detailed_info a {
         text-decoration: none; 
         color: #2e5d89;
@@ -141,7 +149,8 @@
         height: 200px;
         width: 20px;
         background: transparent url("/images/fadeout.png") repeat-y; }
-  .post .text {
+  .post .text,
+  .post .admin_buttons {
     width: 35%;
     overflow: hidden;
     height: 6em;

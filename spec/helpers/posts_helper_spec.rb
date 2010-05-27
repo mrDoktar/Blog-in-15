@@ -28,7 +28,8 @@ This is <code lang="html"><div></code> should be coloured.'
 <span class="ta">&lt;/script&gt;</span>
 </pre></div>
 </div>
- </div><h2>More code</h2>
+ </div><p><a name=\'more-code\'></a></p>
+<h2>More code</h2>
 <p>This is <span class="CodeRay"><span class="ta">&lt;div&gt;</span></span>  should be coloured.</p>'
 
     response = textilize_and_highlight(text)

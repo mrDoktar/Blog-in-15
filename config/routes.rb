@@ -2,8 +2,10 @@ BlogIn15::Application.routes.draw do |map|
   resources :posts, :only => [:index, :show]
   
   namespace :admin do
-    resources :posts, :only => [:new, :create, :edit, :update, :destroy]
+    resources :posts
   end
+  
+  match '/logout' => 'logout#logout'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

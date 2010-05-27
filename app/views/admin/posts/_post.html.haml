@@ -1,0 +1,12 @@
+%li.post{:class => "user_#{post.user_id}", :"data-user_id" => post.user_id}
+  .info.wide
+    .date
+      .day= post.published_on.strftime("%d")
+      .month=  post.published_on.strftime("%b")
+      .year=  post.published_on.strftime("%Y")
+    .title
+      %h1= link_to post.title, post, :title => post.title, :class => post.status
+      = link_to "Edit this one", [:edit, :admin, post], :class => "button"
+      = link_to "Delete this one", [:admin, post], :method => :delete, :confirm => "Are you sure?", :class => "button red"
+
+      .fadeout    

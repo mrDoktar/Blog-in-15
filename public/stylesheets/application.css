@@ -164,7 +164,7 @@ strong {
     z-index: 200;
     position: relative;
     width: 710px;
-    min-height: 17px;
+    min-height: 217px;
     margin-left: 210px;
   }
   #menu {
@@ -177,7 +177,7 @@ strong {
   }
 #footer_container {
   height: 300px;
-  background-color: #242424;
+  background-color: #FFF;
 }
 
 .fieldWithErrors input,

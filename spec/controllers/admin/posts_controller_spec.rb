@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe Admin::PostsController do
   before do
-    @user = mock("User", :email => "john.doe@example.com")
-    @post = mock_model(Post, :null_object => true)
+    @post = mock_model(Post).as_null_object
     Post.stub(:find_by_id).and_return(@post)    
   end
   
   describe "as admin" do
     before do
-      CASClient::Frameworks::Rails::Filter.stub(:filter).and_return(true)
+      CASClient::Frameworks::Rails::Filter.stub(:filter)
+      controller.stub(:current_user).and_return(Factory.build :admin)
     end
     
     it "should be able to visit the new page" do
