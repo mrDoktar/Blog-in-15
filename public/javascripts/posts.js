@@ -61,11 +61,11 @@ $(function() {
     
     allow_load_posts = true;
     $.get("/posts", "list=true" + extra, function(data) {
+      $("#loading_post").hide().removeClass("normal_position");
       if(data == " ")
         allow_load_posts = false;
       else {
         $("#loading_post").before(data);
-        $("#loading_post").hide().removeClass("normal_position");
         checkPostsListHeight();
         $("#posts").jScrollPane({reload: true, callbackOnBottom: loadPosts, maintainPosition: false});
       }
@@ -79,7 +79,7 @@ $(function() {
   var $menu                  = $("#menu");
   var menu_height            = $menu.height();
   var menu_original_position = $menu.offset().top
-  var content_height         = $("#content").height();
+  var content_height         = $("#content").height() - 40;
   $(window).scroll(function(){
       var scroll_top      = $(window).scrollTop();
       var new_menu_top    = scroll_top - menu_original_position

@@ -12,4 +12,4 @@
         = raw "(" + link_to("Comments", post_path(listed_post, :anchor => "disqus_thread")) + ")"
       .fadeout
   .text
-    %p= truncate(strip_tags(textilize(listed_post.body)), :length => 150)
+    %p= strip_tags(textilize(listed_post.intro))

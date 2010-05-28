@@ -19,11 +19,11 @@ $(function() {
   
     allow_load_posts = true;
     $.get("/admin/posts", "list=true" + extra, function(data) {
+      $("#loading_post").hide().removeClass("normal_position");
       if(data == " ")
         allow_load_posts = false;
       else {
         $("#loading_post").before(data);
-        $("#loading_post").hide().removeClass("normal_position");
       }
     });
   });

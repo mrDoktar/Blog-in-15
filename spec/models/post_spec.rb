@@ -29,10 +29,10 @@ describe Post do
 
   describe "calling scopes" do
     before do
-      @post1 = Factory :post, :published_on => 4.days.ago
-      @post2 = Factory :post, :published_on => 2.days.ago
+      @post1 = Factory :post, :published_on => 4.days.ago.to_date
+      @post2 = Factory :post, :published_on => 2.days.ago.to_date
       @post3 = Factory :post, :published_on => Date.today, :reviewed => false
-      @post4 = Factory :post, :published_on => 2.days.from_now
+      @post4 = Factory :post, :published_on => 2.days.from_now.to_date
     end
     
     it "should return published posts that are reviewd" do
@@ -40,7 +40,7 @@ describe Post do
     end
     
     it "should return unpublished posts" do
-      Post.unpublished.first.should eql(@post4)
+      Post.unpublished.first.should eql(@post3)
     end
     
     it "should return the latest posts sorted by published date" do

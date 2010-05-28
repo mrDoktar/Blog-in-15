@@ -1,13 +1,7 @@
 = stylesheet "coderay"
 
+= render :partial => "admin/posts/menu", :locals => {:post => post}
 - content_for(:menu) do
-  - if current_user && current_user.admin
-    #admin_buttons
-      = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
-      %br
-      = link_to "Edit this one", [:edit, :admin, post], :class => "button in_menu"
-      %br
-      = link_to "Delete this one", [:admin, post], :method => :delete, :confirm => "Are you sure?", :class => "button red in_menu"
   = list_headings(post.intro + post.body)
 
 = render :partial => "post_info", :locals => {:post => post}

@@ -5,7 +5,8 @@ BlogIn15::Application.routes.draw do |map|
     resources :posts
   end
   
-  match '/logout' => 'logout#logout'
+  match '/logout' => 'session#logout'
+  match '/login' => 'session#login'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,7 +11,15 @@
     = yield :javascript
     = csrf_meta_tag
   %body
-    #top_menu
+    #top_container
+      #top
+        #login_info
+          - if current_user
+            You are logged in as 
+            = current_user.email
+            = link_to "Logout", logout_path
+          - else
+            = link_to "Login", login_url
     #header_container
       #header
         = image_tag "fade.png", :id => "fade"

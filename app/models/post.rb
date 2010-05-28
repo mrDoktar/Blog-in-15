@@ -39,5 +39,9 @@ class Post < ActiveRecord::Base
       return "unfinished"
     end
   end
+  
+  def status?(status_comparison)
+    status == status_comparison.to_s
+  end
 
 end

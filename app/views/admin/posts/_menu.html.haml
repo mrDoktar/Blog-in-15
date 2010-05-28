@@ -1,4 +1,11 @@
 - content_for(:menu) do
   - if current_user && current_user.admin
-    %p
-      = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu"
+    = link_to "Write a new post", [:new, :admin, :post], :class => "button in_menu" 
+    %br
+    = link_to "List all posts", [:admin, :posts], :class => "button in_menu"
+    - if defined? post
+      %br
+      = link_to "Edit this one", [:edit, :admin, post], :class => "button in_menu"
+      %br
+      = link_to "Delete this one", [:admin, post], :method => :delete, :confirm => "Are you sure?", :class => "button red in_menu"
+    
