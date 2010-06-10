@@ -20,7 +20,7 @@
 #disqus_thread
 
 :javascript
-  var disqus_identifier = "#{((Rails.env.development?) ? "production-" : "development-") + post.id.to_s}";
+  var disqus_identifier = "#{((Rails.env.development?) ? "development-" : "production-") + post.id.to_s}";
   #{"var disqus_developer = 1;" if Rails.env.development?} 
 
   (function() {
