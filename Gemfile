@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta3'
 
-gem 'haml', '>= 3.0.0'
+gem 'haml', '= 3.0.6'
 
 gem 'RedCloth'
 gem 'coderay'
