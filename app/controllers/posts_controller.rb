@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   
   def check_if_published
     @post = Post.find_by_id(params[:id])
-    redirect_to root_url unless @post.status? :published || current_user.admin?
+    redirect_to root_url unless @post.status?(:published) || (current_user.present? && current_user.admin?)
   end
   
 end
