@@ -9,7 +9,7 @@
   #tag_list
     - @tags.each do |tag|
       %a.tag= tag.name
-      %span>= "," unless tag == @tags.last
+      %span>= ", " unless tag == @tags.last
         
   = f.label :intro
   = f.text_area :intro
