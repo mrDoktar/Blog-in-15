@@ -28,6 +28,7 @@ class Admin::PostsController < ApplicationController
   
   def edit
     @post = Post.find_by_id(params[:id])
+    @tags = Tag.order(:name)
   end
   
   def update
