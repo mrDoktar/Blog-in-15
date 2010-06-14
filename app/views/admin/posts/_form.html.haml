@@ -30,7 +30,7 @@
     if(tag_list_val.search(new RegExp(tag_name,"i")) >= 0)
       return;
       
-    var space = (tag_list_val.substring(-1) == " " || tag_list_val.length == 0) ? "" : " ";
+    var comma = (tag_list_val.length == 0) ? "" : ", ";
     
-    $("#post_tag_list").val(tag_list_val + space + tag_name)
+    $("#post_tag_list").val(tag_list_val + comma + tag_name)
   });
