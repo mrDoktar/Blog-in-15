@@ -6,6 +6,9 @@
   = f.text_field :title
   = f.label :tag_list
   = f.text_field :tag_list
+  #tag_list
+    - Tag.order(:name).each do |tag|
+      %a.tag= tag.name
   = f.label :intro
   = f.text_area :intro
   = f.label :body
@@ -19,3 +22,15 @@
   
 :javascript
   $('textarea').elastic();
+  $('a.tag').click(function() {
+    
+    var tag_list_val = $("#post_tag_list").val();
+    var tag_name     = $(this).text();
+    
+    if(tag_list_val.search(new RegExp(tag_name,"i")) >= 0)
+      return;
+      
+    var space = (tag_list_val.substring(-1) == " " || tag_list_val.length == 0) ? "" : " ";
+    
+    $("#post_tag_list").val(tag_list_val + space + tag_name)
+  });

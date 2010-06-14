@@ -27,7 +27,8 @@ html > body {
 a {
   color: #2e5d89;
   border-bottom: 1px dotted #498fd3;
-  text-decoration: none; }
+  text-decoration: none; 
+  cursor: pointer; }
   a:hover {
     border-bottom-style: solid; }
 

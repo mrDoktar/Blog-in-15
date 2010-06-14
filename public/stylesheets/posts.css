@@ -273,3 +273,8 @@ select {
   font-weight: normal;
   color: #303030;
 } 
+
+#tag_list {
+  margin-top: -1.5em;
+  margin-bottom: 1.5em;
+}
