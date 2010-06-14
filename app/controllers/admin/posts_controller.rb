@@ -13,6 +13,7 @@ class Admin::PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @tags = Tag.order(:name)
   end
   
   def create

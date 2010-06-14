@@ -7,8 +7,10 @@
   = f.label :tag_list
   = f.text_field :tag_list
   #tag_list
-    - Tag.order(:name).each do |tag|
+    - @tags.each do |tag|
       %a.tag= tag.name
+      %span>= "," unless tag == @tags.last
+        
   = f.label :intro
   = f.text_area :intro
   = f.label :body
@@ -30,7 +32,7 @@
     if(tag_list_val.search(new RegExp(tag_name,"i")) >= 0)
       return;
       
-    var comma = (tag_list_val.length == 0) ? "" : ", ";
+    var separator = (tag_list_val.length == 0) ? "" : ", ";
     
-    $("#post_tag_list").val(tag_list_val + comma + tag_name)
+    $("#post_tag_list").val(tag_list_val + separator + tag_name)
   });

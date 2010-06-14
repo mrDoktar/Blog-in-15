@@ -275,6 +275,9 @@ select {
 } 
 
 #tag_list {
+  font-size: 0.8em;
   margin-top: -1.5em;
   margin-bottom: 1.5em;
+  margin-left: 1em;
+  width: 90%;
 }
